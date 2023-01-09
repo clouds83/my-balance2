@@ -24,6 +24,10 @@ h6,
   color: var(--primary);
 }
 
+.fs-20 {
+  font-size: 1.25rem;
+}
+
 .light-bg {
   background-color: var(--light-bg);
 }
@@ -168,4 +172,15 @@ p.text-danger {
 
 .negative-balance-boder {
   border: 2px solid var(--expenses);
+}
+
+.fit-content {
+  width: 1%;
+  white-space: nowrap;
+}
+
+@media (min-width: 1360px) {
+  .container {
+    max-width: 1320px;
+  }
 }

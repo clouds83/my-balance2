@@ -115,6 +115,112 @@
 
 <div class="row mb-32">
   <div class="col-md-6">
+    <h3 class="fs-20 font-secondary">Income list</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr class="light-bg">
+          <th>Entry</th>
+          <th class="fit-content">Category</th>
+          <th class="text-right fit-content">Amount</th>
+          <th class="text-center fit-content">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of entries">
+          <ng-container *ngIf="entry.type == 'revenue'">
+            <td>
+              {{ entry.name }} |
+              <small class="font-primary">{{ entry.date }}</small
+              ><br />
+              <small *ngIf="entry.description">{{ entry.description }}</small>
+            </td>
+            <td>
+              {{ entry.category.name }}
+            </td>
+            <td class="text-right">
+              <strong
+                [class.font-secondary]="entry.type == 'revenue'"
+                [class.text-danger]="entry.type == 'expense'"
+              >
+                {{ entry.amount | currency }}
+              </strong>
+              <br />
+              <span class="badge badge-light">{{ entry.paidText }}</span>
+            </td>
+            <td class="text-nowrap">
+              <a
+                [routerLink]="[entry.id, 'edit']"
+                class="btn btn-outline-primary btn-sm mr-2"
+                >Edit</a
+              >
+              <!-- TODO -->
+              <button
+                (click)="deleteResource(entry)"
+                class="btn btn-outline-danger btn-sm"
+              >
+                Delete
+              </button>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3 class="fs-20 font-expenses">Expenses list</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr class="light-bg">
+          <th>Entry</th>
+          <th class="fit-content">Category</th>
+          <th class="text-right fit-content">Amount</th>
+          <th class="text-center fit-content">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of entries">
+          <ng-container *ngIf="entry.type == 'expense'">
+            <td>
+              {{ entry.name }} |
+              <small class="font-primary">{{ entry.date }}</small
+              ><br />
+              <small *ngIf="entry.description">{{ entry.description }}</small>
+            </td>
+            <td>
+              {{ entry.category.name }}
+            </td>
+            <td class="text-right">
+              <strong
+                [class.font-secondary]="entry.type == 'revenue'"
+                [class.text-danger]="entry.type == 'expense'"
+              >
+                {{ entry.amount | currency }}
+              </strong>
+              <br />
+              <span class="badge badge-light">{{ entry.paidText }}</span>
+            </td>
+            <td class="text-nowrap">
+              <a
+                [routerLink]="[entry.id, 'edit']"
+                class="btn btn-outline-primary btn-sm mr-2"
+                >Edit</a
+              >
+              <button
+                (click)="deleteResource(entry)"
+                class="btn btn-outline-danger btn-sm"
+              >
+                Delete
+              </button>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row mb-32">
+  <div class="col-md-6">
     <p-chart
       type="bar"
       [data]="revenueChartData"
