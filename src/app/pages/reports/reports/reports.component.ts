@@ -6,14 +6,15 @@ import { CategoryService } from "../../categories/shared/category.service";
 import { Entry } from "../../entries/shared/entry.model";
 import { EntryService } from "../../entries/shared/entry.service";
 
-import currencyFormatter from "currency-formatter";
-
 @Component({
   selector: "app-reports",
   templateUrl: "./reports.component.html",
-  styleUrls: ["./reports.component.css"],
+  styleUrls: ["./reports.component.scss"],
 })
 export class ReportsComponent implements OnInit {
+  currentMonth: any = new Date().getMonth() + 1;
+  currentYear: any = new Date().getFullYear();
+
   expenseTotal: any = 0;
   revenueTotal: any = 0;
   balance: any = 0;
@@ -48,18 +49,49 @@ export class ReportsComponent implements OnInit {
     this.categoryService
       .getAll()
       .subscribe((categories) => (this.categories = categories));
+
+    this.entryService
+      .getByMonthAndYear(this.currentMonth, this.currentYear)
+      .subscribe(this.setValues.bind(this));
+  }
+
+  prevMonth() {
+    if (this.currentMonth > 1 && this.currentMonth <= 12) {
+      this.currentMonth--;
+    } else {
+      this.currentMonth = 12;
+      this.currentYear--;
+    }
+
+    this.entryService
+      .getByMonthAndYear(this.currentMonth, this.currentYear)
+      .subscribe(this.setValues.bind(this));
+  }
+
+  nextMonth() {
+    if (this.currentMonth > 0 && this.currentMonth <= 11) {
+      this.currentMonth++;
+    } else {
+      this.currentMonth = 1;
+      this.currentYear++;
+    }
+
+    this.entryService
+      .getByMonthAndYear(this.currentMonth, this.currentYear)
+      .subscribe(this.setValues.bind(this));
   }
 
   generateReports() {
     const month = this.month.nativeElement.value;
     const year = this.year.nativeElement.value;
 
-    if (!month || !year)
-      alert("Você precisa selecionar o Mês e o Ano para gerar os relatórios");
-    else
+    if (!month || !year) {
+      alert("Select month and year to generate your report");
+    } else {
       this.entryService
         .getByMonthAndYear(month, year)
         .subscribe(this.setValues.bind(this));
+    }
   }
 
   private setValues(entries: Entry[]) {
@@ -73,33 +105,25 @@ export class ReportsComponent implements OnInit {
     let revenueTotal = 0;
 
     this.entries.forEach((entry) => {
-      if (entry.type == "revenue")
-        revenueTotal += currencyFormatter.unformat(entry.amount, {
-          code: "BRL",
-        });
-      else
-        expenseTotal += currencyFormatter.unformat(entry.amount, {
-          code: "BRL",
-        });
+      if (entry.type == "revenue") revenueTotal += +entry.amount;
+      else expenseTotal += +entry.amount;
     });
 
-    this.expenseTotal = currencyFormatter.format(expenseTotal, { code: "BRL" });
-    this.revenueTotal = currencyFormatter.format(revenueTotal, { code: "BRL" });
-    this.balance = currencyFormatter.format(revenueTotal - expenseTotal, {
-      code: "BRL",
-    });
+    this.expenseTotal = expenseTotal;
+    this.revenueTotal = revenueTotal;
+    this.balance = revenueTotal - expenseTotal;
   }
 
   private setChartData() {
     this.revenueChartData = this.getChartData(
       "revenue",
       "Income chart",
-      "#9CCC65"
+      "#46bb00"
     );
     this.expenseChartData = this.getChartData(
       "expense",
       "Expenses chart",
-      "#e03131"
+      "#db0000"
     );
   }
 
@@ -115,8 +139,7 @@ export class ReportsComponent implements OnInit {
       // if found entries, then sum entries amount and add to chartData
       if (filteredEntries.length > 0) {
         const totalAmount = filteredEntries.reduce(
-          (total, entry) =>
-            total + currencyFormatter.unformat(entry.amount, { code: "BRL" }),
+          (total, entry) => total + +entry.amount,
           0
         );
 

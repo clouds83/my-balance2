@@ -70,9 +70,11 @@ export class EntryFormComponent
       "Nov",
       "Dez",
     ],
-    today: "Hoje",
-    clear: "Limpar",
+    today: "Today",
+    clear: "Clear",
   };
+
+  option: any;
 
   constructor(
     protected entryService: EntryService,
@@ -101,7 +103,7 @@ export class EntryFormComponent
       id: [null],
       name: [null, [Validators.required, Validators.minLength(2)]],
       description: [null],
-      type: ["expense", [Validators.required]],
+      type: [null, [Validators.required]],
       amount: [null, [Validators.required]],
       date: [null, [Validators.required]],
       paid: [true, [Validators.required]],
@@ -123,4 +125,8 @@ export class EntryFormComponent
     const resourceName = this.resource.name || "";
     return "Update entry: " + resourceName;
   }
+
+  // typeSelected(e: any) {
+  //   console.log(e.target.value);
+  // }
 }

@@ -13,10 +13,10 @@
   <div class="card">
     <div class="card-header">Entries information</div>
 
-    <div class="card-body">
+    <div class="card-body form-body">
       <div class="form-row">
         <!-- type -->
-        <div class="form-group col-md-2">
+        <div class="form-group">
           <label for="type">Type</label>
 
           <select
@@ -25,7 +25,7 @@
             formControlName="type"
             class="form-control"
           >
-            <option *ngFor="let option of typeOptions" [value]="option.value">
+            <option *ngFor="let option of typeOptions" [ngValue]="option.value">
               {{ option.text }}
             </option>
           </select>
@@ -36,7 +36,7 @@
         </div>
 
         <!-- name -->
-        <div class="form-group col-md-5">
+        <div class="form-group">
           <label for="name">Entry</label>
           <input
             type="text"
@@ -51,14 +51,13 @@
         </div>
 
         <!-- amount -->
-        <div class="form-group col-md-3">
+        <div class="form-group">
           <label for="amount">Amount</label>
           <div class="input-group">
             <div class="input-group-prepend">
-              <div class="input-group-text">R$</div>
+              <div class="input-group-text">$</div>
             </div>
             <input
-              [imask]="imaskConfig"
               type="text"
               class="form-control text-right"
               id="amount"
@@ -72,10 +71,11 @@
         </div>
 
         <!-- date -->
-        <div class="form-group col-md-2">
-          <label for="date">Date</label>
+        <div class="form-group">
+          <label for="date" class="w-100">Date</label>
           <p-calendar
             id="date"
+            class="w-100"
             formControlName="date"
             inputStyleClass="form-control"
             dataType="string"
@@ -93,20 +93,20 @@
 
       <div class="form-row">
         <!-- paid -->
-        <div class="form-group col-md-2">
-          <label for="paid">Paid</label>
-          <div class="btn-group">
+        <div class="form-group">
+          <label for="paid" class="w-100">Status</label>
+          <div class="btn-group w-100">
             <label
               (click)="resourceForm.get('paid').setValue(true)"
               [class.active]="resourceForm.get('paid').value == true"
-              class="btn btn-outline-info"
+              class="btn btn-outline-primary status-btn"
             >
               Paid
             </label>
             <label
               (click)="resourceForm.get('paid').setValue(false)"
               [class.active]="resourceForm.get('paid').value == false"
-              class="btn btn-outline-info"
+              class="btn btn-outline-primary status-btn"
             >
               Pending
             </label>
@@ -118,7 +118,7 @@
         </div>
 
         <!-- categoryId -->
-        <div class="form-group col-md-3">
+        <div class="form-group">
           <label for="categoryId">Category</label>
 
           <select
@@ -138,7 +138,7 @@
         </div>
 
         <!-- description -->
-        <div class="form-group col-md-7">
+        <div class="form-group">
           <label for="description">Description</label>
           <input
             type="text"

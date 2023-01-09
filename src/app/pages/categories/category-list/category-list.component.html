@@ -11,20 +11,19 @@
   <thead>
     <tr class="light-bg2 text-light">
       <th>Category</th>
-      <th>Actions</th>
+      <th class="text-right">Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let category of resources">
       <td>
-        <strong>{{ category.name }}</strong
-        ><br />
+        {{ category.name }}<br />
         <small>{{ category.description }}</small>
       </td>
-      <td>
+      <td class="text-right">
         <a
           [routerLink]="[category.id, 'edit']"
-          class="btn btn-outline-info btn-sm mr-2"
+          class="btn btn-outline-primary btn-sm mr-2"
           >Edit</a
         >
         <button

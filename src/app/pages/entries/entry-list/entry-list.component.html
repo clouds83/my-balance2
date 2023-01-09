@@ -12,16 +12,16 @@
     <tr class="light-bg2 text-light">
       <th>Entry</th>
       <th>Category</th>
-      <th class="text-right">Amount R$</th>
-      <th class="text-center">Actions</th>
+      <th class="text-right">Amount</th>
+      <th class="text-right">Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let entry of resources">
       <td>
-        <strong>{{ entry.name }}</strong
-        ><br />
-        <small class="text-success">{{ entry.date }}</small
+        {{ entry.name }}
+        <br />
+        <small class="font-primary">{{ entry.date }}</small
         ><br />
         <small *ngIf="entry.description">{{ entry.description }}</small>
       </td>
@@ -30,18 +30,18 @@
       </td>
       <td class="text-right">
         <strong
-          [class.text-success]="entry.type == 'revenue'"
+          [class.font-secondary]="entry.type == 'revenue'"
           [class.text-danger]="entry.type == 'expense'"
         >
-          {{ entry.amount }}
+          {{ entry.amount | currency }}
         </strong>
         <br />
         <span class="badge badge-light">{{ entry.paidText }}</span>
       </td>
-      <td class="text-center">
+      <td class="text-right">
         <a
           [routerLink]="[entry.id, 'edit']"
-          class="btn btn-outline-info btn-sm mr-2"
+          class="btn btn-outline-primary btn-sm mr-2"
           >Edit</a
         >
         <button

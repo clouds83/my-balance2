@@ -1,0 +1,171 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #26408b;
+  --base-text: #6d768f;
+  --secondary: #46bb00;
+  --expenses: #db0000;
+  --light-bg: #f0f4ff;
+  --light-bg2: #d6e1ff;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: var(--base-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.light-bg2 th,
+.font-primary {
+  color: var(--primary);
+}
+
+.light-bg {
+  background-color: var(--light-bg);
+}
+
+.light-bg2 {
+  background-color: var(--light-bg2);
+}
+
+.card {
+  border: 1px solid var(--light-bg2);
+  border-radius: 0.5rem;
+}
+
+.card-header {
+  color: car(--primary);
+  border-bottom: 1px solid var(--light-bg2);
+  background-color: var(--light-bg);
+}
+
+.card .card-header {
+  border-radius: 0.4375rem 0.4375rem 0 0;
+}
+
+.border-light2 {
+  border: 1px solid var(--light-bg2);
+}
+
+.rounded-corner-md {
+  border-radius: 0.5rem;
+}
+
+.pad-32 {
+  padding: 2rem;
+}
+
+.mb-32 {
+  margin-bottom: 2rem;
+}
+
+.mb-16 {
+  margin-bottom: 1rem;
+}
+
+.fs-18 {
+  font-size: 1.125rem;
+}
+
+.table {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--light-bg2);
+  border-collapse: initial;
+  border-spacing: 0;
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--light-bg);
+}
+
+.table thead th {
+  border: 0;
+  font-weight: 400;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+  border-top: 1px solid var(--light-bg2);
+  padding: 0.75rem 1rem;
+}
+
+.badge {
+  padding: 0.5em 0.75em;
+}
+
+button,
+input,
+select,
+.form-control {
+  height: 3rem;
+  border: 1px solid var(--light-bg2);
+}
+
+.form-row > .col,
+.form-row > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.form-row {
+  margin: 0;
+  gap: 1.5rem;
+}
+
+.form-group {
+  flex: 1;
+  margin: 0;
+}
+
+.card-body {
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+.btn-sm {
+  height: auto;
+}
+
+.p-calendar {
+  width: 100%;
+}
+
+.status-btn {
+  height: 3rem;
+  flex: 1 !important;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+p.text-danger {
+  margin: 0;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.font-secondary {
+  color: var(--secondary);
+}
+
+.font-expenses {
+  color: var(--expenses);
+}
+
+.positive-balance-boder {
+  border: 2px solid var(--secondary);
+}
+
+.negative-balance-boder {
+  border: 2px solid var(--expenses);
+}
