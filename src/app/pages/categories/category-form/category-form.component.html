@@ -2,12 +2,7 @@
   [items]="[{ text: 'Categories', link: '/categories' }, { text: pageTitle }]"
 ></app-bread-crumb> -->
 
-<app-page-header
-  [page-title]="pageTitle"
-  button-text="<< Back"
-  button-link="/categories"
-  button-class="btn-light"
-></app-page-header>
+<app-page-header [page-title]="pageTitle"></app-page-header>
 
 <form [formGroup]="resourceForm" (submit)="submitForm()">
   <div class="card">
@@ -53,4 +48,10 @@
   >
     Save Category
   </button>
+  <a
+    [routerLink]="['/reports']"
+    class="btn-mb buttonClass btn-lg btn-sec float-right mt-3 mr-3"
+  >
+    CANCEL
+  </a>
 </form>
