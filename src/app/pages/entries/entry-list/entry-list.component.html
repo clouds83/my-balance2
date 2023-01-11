@@ -40,7 +40,11 @@
         </strong>
       </td>
       <td>
-        <span class="badge badge-light">{{ entry.paidText }}</span>
+        <span
+          class="badge badge-light"
+          [ngClass]="{ paid: entry.paidText === 'Paid' }"
+          >{{ entry.paidText }}</span
+        >
       </td>
       <td>
         {{ entry.category.name }}

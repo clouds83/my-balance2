@@ -65,6 +65,16 @@ h6,
   padding: 1rem 1.75rem;
 }
 
+.btn-sec {
+  background-color: white;
+  color: var(--base-text);
+  border-color: var(--base-text);
+
+  &:hover {
+    border-color: var(--primary);
+  }
+}
+
 .btn-outline-primary {
   color: var(--primary);
   border-color: var(--primary);
@@ -137,6 +147,10 @@ h6,
   border-collapse: initial;
   border-spacing: 0;
   color: var(--base-text);
+
+  td {
+    color: var(--primary);
+  }
 }
 
 .table-hover tbody tr:hover {
@@ -145,7 +159,7 @@ h6,
 
 .table thead th {
   border: 0;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .table td,
@@ -159,10 +173,36 @@ h6,
   display: block;
   line-height: 16px;
   margin-top: 2px;
+  color: var(--base-text);
 }
 
 .badge {
   padding: 0.5em 0.75em;
+  background: #fff8dc;
+  border: 1px solid #efe5be;
+
+  &.paid {
+    background-color: #dfffcc;
+    border: 1px solid #d3e3c9;
+  }
+}
+
+.paid {
+  &.active,
+  &:active {
+    color: var(--primary) !important;
+    background-color: #dfffcc !important;
+    border: 1px solid #d3e3c9 !important;
+  }
+}
+
+.pending {
+  &.active,
+  &:active {
+    color: var(--primary) !important;
+    background-color: #fff8dc !important;
+    border: 1px solid #efe5be !important;
+  }
 }
 
 button,
@@ -208,6 +248,7 @@ select,
   display: flex;
   justify-content: center;
   margin: 0;
+  border-color: var(--light-bg2);
 }
 
 p.text-danger {

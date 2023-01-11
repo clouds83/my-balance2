@@ -1,12 +1,12 @@
-<div class="row mb-4">
+<div class="row mb-4 align-items-center">
   <div class="col-md-9">
-    <h2>
-      {{pageTitle}}
+    <h2 class="m-0">
+      {{ pageTitle }}
     </h2>
   </div>
   <div *ngIf="showButton" class="col-md-3 text-right">
     <a [routerLink]="buttonLink" class="btn" [ngClass]="buttonClass">
-      {{buttonText}}
+      {{ buttonText }}
     </a>
   </div>
 </div>

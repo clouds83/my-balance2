@@ -2,12 +2,7 @@
   [items]="[{ text: 'Entries', link: '/entries' }, { text: pageTitle }]"
 ></app-bread-crumb> -->
 
-<app-page-header
-  [page-title]="pageTitle"
-  button-text="<< Back"
-  button-link="/entries"
-  button-class="btn-light"
-></app-page-header>
+<app-page-header [page-title]="pageTitle"></app-page-header>
 
 <form [formGroup]="resourceForm" (submit)="submitForm()">
   <div class="card">
@@ -100,14 +95,14 @@
             <label
               (click)="resourceForm.get('paid').setValue(true)"
               [class.active]="resourceForm.get('paid').value == true"
-              class="btn btn-outline-primary status-btn"
+              class="btn btn-outline-primary status-btn paid"
             >
               Paid
             </label>
             <label
               (click)="resourceForm.get('paid').setValue(false)"
               [class.active]="resourceForm.get('paid').value == false"
-              class="btn btn-outline-primary status-btn"
+              class="btn btn-outline-primary status-btn pending"
             >
               Pending
             </label>
@@ -166,6 +161,13 @@
     type="submit"
     class="btn-mb btn-lg float-right mt-3"
   >
-    Save
+    Save Entry
   </button>
+
+  <a
+    [routerLink]="['/reports']"
+    class="btn-mb buttonClass btn-lg btn-sec float-right mt-3 mr-3"
+  >
+    CANCEL
+  </a>
 </form>
