@@ -1,6 +1,6 @@
-<app-bread-crumb
+<!-- <app-bread-crumb
   [items]="[{ text: 'Entries', link: '/entries' }, { text: pageTitle }]"
-></app-bread-crumb>
+></app-bread-crumb> -->
 
 <app-page-header
   [page-title]="pageTitle"
@@ -25,6 +25,7 @@
             formControlName="type"
             class="form-control"
           >
+            <option value="" selected>Select entry type</option>
             <option *ngFor="let option of typeOptions" [ngValue]="option.value">
               {{ option.text }}
             </option>
@@ -127,7 +128,8 @@
             formControlName="categoryId"
             class="form-control"
           >
-            <option *ngFor="let category of categories" [value]="category.id">
+            <option value="" selected>Select category</option>
+            <option *ngFor="let category of categories" [ngValue]="category.id">
               {{ category.name }}
             </option>
           </select>
@@ -162,7 +164,7 @@
   <button
     [disabled]="submittingForm || resourceForm.invalid"
     type="submit"
-    class="btn btn-primary btn-lg float-right mt-3"
+    class="btn-mb btn-lg float-right mt-3"
   >
     Save
   </button>

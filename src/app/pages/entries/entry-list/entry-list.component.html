@@ -1,33 +1,35 @@
-<!-- <app-bread-crumb [items]="[{ text: 'Entries' }]"></app-bread-crumb> -->
+<!-- <app-bread-crumb [items]="[{ text: 'All entries' }]"></app-bread-crumb> -->
 
 <app-page-header
-  page-title="Entries"
+  page-title="All entries"
   button-text="+ New entry"
   button-link="new"
-  button-class="btn-success"
+  button-class="btn-md btn-mb"
 ></app-page-header>
 
 <table class="table table-hover">
   <thead>
     <tr class="light-bg2 text-light">
+      <th>Date</th>
       <th>Entry</th>
-      <th>Category</th>
       <th class="text-right">Amount</th>
-      <th class="text-right">Actions</th>
+      <th>Status</th>
+      <th>Category</th>
+      <th class="fit-content">Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let entry of resources">
       <!-- <ng-container *ngIf="entry.type == 'expense'"> -->
       <td>
-        {{ entry.name }}
-        <br />
-        <small class="font-primary">{{ entry.date }}</small
-        ><br />
-        <small *ngIf="entry.description">{{ entry.description }}</small>
+        <small class="font-primary">{{ entry.date }}</small>
       </td>
       <td>
-        {{ entry.category.name }}
+        {{ entry.name }}
+        <br />
+        <small *ngIf="entry.description" class="tab-desc">{{
+          entry.description
+        }}</small>
       </td>
       <td class="text-right">
         <strong
@@ -36,10 +38,14 @@
         >
           {{ entry.amount | currency }}
         </strong>
-        <br />
+      </td>
+      <td>
         <span class="badge badge-light">{{ entry.paidText }}</span>
       </td>
-      <td class="text-right">
+      <td>
+        {{ entry.category.name }}
+      </td>
+      <td class="text-nowrap">
         <a
           [routerLink]="[entry.id, 'edit']"
           class="btn btn-outline-primary btn-sm mr-2"

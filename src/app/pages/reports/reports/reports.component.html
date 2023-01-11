@@ -2,28 +2,31 @@
   [items]="[{ text: 'Income and expenses report' }]"
 ></app-bread-crumb> -->
 
-<div class="selector-container">
-  <div class="selector-buttons">
-    <a class="prev-bt" (click)="prevMonth()" title="Previous month">
-      <svg width="10" height="16" viewBox="0 0 10 16">
-        <path
-          d="M-5951.442,15.442A1.893,1.893,0,0,1-5952,14.1a1.89,1.89,0,0,1,.559-1.346l4.75-4.749-4.75-4.75A1.891,1.891,0,0,1-5952,1.9a1.892,1.892,0,0,1,.557-1.347,1.909,1.909,0,0,1,2.695,0l6.094,6.095A1.9,1.9,0,0,1-5942.1,8a1.892,1.892,0,0,1-.559,1.347l-6.094,6.095a1.89,1.89,0,0,1-1.346.557A1.891,1.891,0,0,1-5951.442,15.442Zm.629-.629a1.013,1.013,0,0,0,1.436,0l6.1-6.1a1.006,1.006,0,0,0,.3-.717,1.012,1.012,0,0,1-.3.717l-6.1,6.1a1.013,1.013,0,0,1-1.436,0,1.012,1.012,0,0,1-.3-.718A1.012,1.012,0,0,0-5950.813,14.814Zm0-12.192L-5945.436,8l-5.377-5.379Z"
-          transform="translate(5952 0)"
-          fill="#abb9e0"
-        />
-      </svg>
-    </a>
-    <a class="next-bt" (click)="nextMonth()" title="Next month">
-      <svg width="10" height="16" viewBox="0 0 10 16">
-        <path
-          d="M-5951.442,15.442A1.893,1.893,0,0,1-5952,14.1a1.89,1.89,0,0,1,.559-1.346l4.75-4.749-4.75-4.75A1.891,1.891,0,0,1-5952,1.9a1.892,1.892,0,0,1,.557-1.347,1.909,1.909,0,0,1,2.695,0l6.094,6.095A1.9,1.9,0,0,1-5942.1,8a1.892,1.892,0,0,1-.559,1.347l-6.094,6.095a1.89,1.89,0,0,1-1.346.557A1.891,1.891,0,0,1-5951.442,15.442Zm.629-.629a1.013,1.013,0,0,0,1.436,0l6.1-6.1a1.006,1.006,0,0,0,.3-.717,1.012,1.012,0,0,1-.3.717l-6.1,6.1a1.013,1.013,0,0,1-1.436,0,1.012,1.012,0,0,1-.3-.718A1.012,1.012,0,0,0-5950.813,14.814Zm0-12.192L-5945.436,8l-5.377-5.379Z"
-          transform="translate(5952 0)"
-          fill="#abb9e0"
-        />
-      </svg>
-    </a>
+<div class="d-flex justify-content-between mb-3">
+  <div class="selector-container">
+    <div class="selector-buttons">
+      <a class="prev-bt" (click)="prevMonth()" title="Previous month">
+        <svg width="10" height="16" viewBox="0 0 10 16">
+          <path
+            d="M-5951.442,15.442A1.893,1.893,0,0,1-5952,14.1a1.89,1.89,0,0,1,.559-1.346l4.75-4.749-4.75-4.75A1.891,1.891,0,0,1-5952,1.9a1.892,1.892,0,0,1,.557-1.347,1.909,1.909,0,0,1,2.695,0l6.094,6.095A1.9,1.9,0,0,1-5942.1,8a1.892,1.892,0,0,1-.559,1.347l-6.094,6.095a1.89,1.89,0,0,1-1.346.557A1.891,1.891,0,0,1-5951.442,15.442Zm.629-.629a1.013,1.013,0,0,0,1.436,0l6.1-6.1a1.006,1.006,0,0,0,.3-.717,1.012,1.012,0,0,1-.3.717l-6.1,6.1a1.013,1.013,0,0,1-1.436,0,1.012,1.012,0,0,1-.3-.718A1.012,1.012,0,0,0-5950.813,14.814Zm0-12.192L-5945.436,8l-5.377-5.379Z"
+            transform="translate(5952 0)"
+            fill="#abb9e0"
+          />
+        </svg>
+      </a>
+      <a class="next-bt" (click)="nextMonth()" title="Next month">
+        <svg width="10" height="16" viewBox="0 0 10 16">
+          <path
+            d="M-5951.442,15.442A1.893,1.893,0,0,1-5952,14.1a1.89,1.89,0,0,1,.559-1.346l4.75-4.749-4.75-4.75A1.891,1.891,0,0,1-5952,1.9a1.892,1.892,0,0,1,.557-1.347,1.909,1.909,0,0,1,2.695,0l6.094,6.095A1.9,1.9,0,0,1-5942.1,8a1.892,1.892,0,0,1-.559,1.347l-6.094,6.095a1.89,1.89,0,0,1-1.346.557A1.891,1.891,0,0,1-5951.442,15.442Zm.629-.629a1.013,1.013,0,0,0,1.436,0l6.1-6.1a1.006,1.006,0,0,0,.3-.717,1.012,1.012,0,0,1-.3.717l-6.1,6.1a1.013,1.013,0,0,1-1.436,0,1.012,1.012,0,0,1-.3-.718A1.012,1.012,0,0,0-5950.813,14.814Zm0-12.192L-5945.436,8l-5.377-5.379Z"
+            transform="translate(5952 0)"
+            fill="#abb9e0"
+          />
+        </svg>
+      </a>
+    </div>
+    <h2>{{ [currentMonth] | date : "MMMM" }} {{ currentYear }}</h2>
   </div>
-  <h2>{{ [currentMonth] | date : "MMMM" }} {{ currentYear }}</h2>
+  <a routerLink="/entries/new" class="btn-md btn-mb"> + Add Entry </a>
 </div>
 
 <!-- <app-page-header
@@ -113,113 +116,18 @@
   </div>
 </div>
 
-<div class="row mb-32">
+<div class="row mb-32" *ngIf="entries.length > 0">
   <div class="col-md-6">
-    <h3 class="fs-20 font-secondary">Income list</h3>
-    <table class="table table-hover">
-      <thead>
-        <tr class="light-bg">
-          <th>Entry</th>
-          <th class="fit-content">Category</th>
-          <th class="text-right fit-content">Amount</th>
-          <th class="text-center fit-content">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let entry of entries">
-          <ng-container *ngIf="entry.type == 'revenue'">
-            <td>
-              {{ entry.name }} |
-              <small class="font-primary">{{ entry.date }}</small
-              ><br />
-              <small *ngIf="entry.description">{{ entry.description }}</small>
-            </td>
-            <td>
-              {{ entry.category.name }}
-            </td>
-            <td class="text-right">
-              <strong
-                [class.font-secondary]="entry.type == 'revenue'"
-                [class.text-danger]="entry.type == 'expense'"
-              >
-                {{ entry.amount | currency }}
-              </strong>
-              <br />
-              <span class="badge badge-light">{{ entry.paidText }}</span>
-            </td>
-            <td class="text-nowrap">
-              <a
-                [routerLink]="['/entries', entry.id, 'edit']"
-                class="btn btn-outline-primary btn-sm mr-2"
-                >Edit</a
-              >
-              <!-- TODO -->
-              <button
-                (click)="deleteResource(entry)"
-                class="btn btn-outline-danger btn-sm"
-              >
-                Delete
-              </button>
-            </td>
-          </ng-container>
-        </tr>
-      </tbody>
-    </table>
+    <h3 class="fs-20 mb-3">Income list</h3>
+    <app-monthly-list [entries]="entries" entryT="revenue"></app-monthly-list>
   </div>
   <div class="col-md-6">
-    <h3 class="fs-20 font-expenses">Expenses list</h3>
-    <table class="table table-hover">
-      <thead>
-        <tr class="light-bg">
-          <th>Entry</th>
-          <th class="fit-content">Category</th>
-          <th class="text-right fit-content">Amount</th>
-          <th class="text-center fit-content">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let entry of entries">
-          <ng-container *ngIf="entry.type == 'expense'">
-            <td>
-              {{ entry.name }} |
-              <small class="font-primary">{{ entry.date }}</small
-              ><br />
-              <small *ngIf="entry.description">{{ entry.description }}</small>
-            </td>
-            <td>
-              {{ entry.category.name }}
-            </td>
-            <td class="text-right">
-              <strong
-                [class.font-secondary]="entry.type == 'revenue'"
-                [class.text-danger]="entry.type == 'expense'"
-              >
-                {{ entry.amount | currency }}
-              </strong>
-              <br />
-              <span class="badge badge-light">{{ entry.paidText }}</span>
-            </td>
-            <td class="text-nowrap">
-              <a
-                [routerLink]="[entry.id, 'edit']"
-                class="btn btn-outline-primary btn-sm mr-2"
-                >Edit</a
-              >
-              <button
-                (click)="deleteResource(entry)"
-                class="btn btn-outline-danger btn-sm"
-              >
-                Delete
-              </button>
-            </td>
-          </ng-container>
-        </tr>
-      </tbody>
-    </table>
+    <h3 class="fs-20 mb-3">Expenses list</h3>
+    <app-monthly-list [entries]="entries" entryT="expense"></app-monthly-list>
   </div>
 </div>
 
-<div class="row mb-32">
+<div class="row mb-32" *ngIf="entries.length > 0">
   <div class="col-md-6">
     <p-chart
       type="bar"
