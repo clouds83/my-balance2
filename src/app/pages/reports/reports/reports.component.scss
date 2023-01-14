@@ -20,16 +20,34 @@
   path {
     transition: all 300ms;
   }
+  @media (min-width: 641px) {
+    &:hover {
+      border-color: var(--primary);
+      background-color: var(--light-bg2);
+      box-shadow: rgb(0 0 0 / 10%) 0px 0.5rem 1rem;
+      transform: scale(1.05);
 
-  &:hover {
-    border-color: var(--primary);
-    background-color: var(--light-bg2);
-    box-shadow: rgb(0 0 0 / 10%) 0px 0.5rem 1rem;
-    transform: scale(1.05);
+      path {
+        transition: all 300ms;
+        fill: var(--primary);
+      }
+    }
+  }
 
-    path {
-      transition: all 300ms;
-      fill: var(--primary);
+  @media (max-width: 640px) {
+    height: 4rem;
+    width: 4rem;
+
+    &:active {
+      border-color: var(--primary);
+      background-color: var(--light-bg2);
+      box-shadow: rgb(0 0 0 / 10%) 0px 0.5rem 1rem;
+      transform: scale(1.05);
+
+      path {
+        transition: all 300ms;
+        fill: var(--primary);
+      }
     }
   }
 }

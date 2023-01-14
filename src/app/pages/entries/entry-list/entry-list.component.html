@@ -7,62 +7,64 @@
   button-class="btn-md btn-mb"
 ></app-page-header>
 
-<table class="table table-hover">
-  <thead>
-    <tr class="light-bg text-light">
-      <th>Date</th>
-      <th>Entry</th>
-      <th class="text-right">Amount</th>
-      <th>Status</th>
-      <th>Category</th>
-      <th class="fit-content">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let entry of resources">
-      <!-- <ng-container *ngIf="entry.type == 'expense'"> -->
-      <td>
-        <small class="font-primary">{{ entry.date }}</small>
-      </td>
-      <td>
-        {{ entry.name }}
-        <br />
-        <small *ngIf="entry.description" class="tab-desc">{{
-          entry.description
-        }}</small>
-      </td>
-      <td class="text-right">
-        <strong
-          [class.font-secondary]="entry.type == 'revenue'"
-          [class.text-danger]="entry.type == 'expense'"
-        >
-          {{ entry.amount | currency }}
-        </strong>
-      </td>
-      <td>
-        <span
-          class="badge badge-light"
-          [ngClass]="{ paid: entry.paidText === 'Paid' }"
-          >{{ entry.paidText }}</span
-        >
-      </td>
-      <td>
-        {{ entry.category.name }}
-      </td>
-      <td class="text-nowrap">
-        <a
-          [routerLink]="[entry.id, 'edit']"
-          class="btn btn-outline-primary btn-sm mr-2"
-          >Edit</a
-        >
-        <button
-          (click)="deleteResource(entry)"
-          class="btn btn-outline-danger btn-sm"
-        >
-          Delete
-        </button>
-      </td>
-      <!-- </ng-container> -->
-    </tr>
-  </tbody>
-</table>
+<div class="table-wrapper">
+  <table class="table table-hover">
+    <thead>
+      <tr class="light-bg text-light">
+        <th>Date</th>
+        <th>Entry</th>
+        <th class="text-right">Amount</th>
+        <th>Status</th>
+        <th>Category</th>
+        <th class="fit-content">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of resources">
+        <!-- <ng-container *ngIf="entry.type == 'expense'"> -->
+        <td>
+          <small class="font-primary">{{ entry.date }}</small>
+        </td>
+        <td>
+          {{ entry.name }}
+          <br />
+          <small *ngIf="entry.description" class="tab-desc">{{
+            entry.description
+          }}</small>
+        </td>
+        <td class="text-right">
+          <strong
+            [class.font-secondary]="entry.type == 'revenue'"
+            [class.text-danger]="entry.type == 'expense'"
+          >
+            {{ entry.amount | currency }}
+          </strong>
+        </td>
+        <td>
+          <span
+            class="badge badge-light"
+            [ngClass]="{ paid: entry.paidText === 'Paid' }"
+            >{{ entry.paidText }}</span
+          >
+        </td>
+        <td>
+          {{ entry.category.name }}
+        </td>
+        <td class="text-nowrap">
+          <a
+            [routerLink]="[entry.id, 'edit']"
+            class="btn btn-outline-primary btn-sm mr-2"
+            >Edit</a
+          >
+          <button
+            (click)="deleteResource(entry)"
+            class="btn btn-outline-danger btn-sm"
+          >
+            Delete
+          </button>
+        </td>
+        <!-- </ng-container> -->
+      </tr>
+    </tbody>
+  </table>
+</div>

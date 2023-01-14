@@ -9,7 +9,7 @@
     <div class="card-header">Entries information</div>
 
     <div class="card-body form-body">
-      <div class="form-row">
+      <div class="form-row input-container">
         <!-- type -->
         <div class="form-group">
           <label for="type">Type</label>
@@ -87,7 +87,7 @@
         </div>
       </div>
 
-      <div class="form-row">
+      <div class="form-row input-container">
         <!-- paid -->
         <div class="form-group">
           <label for="paid" class="w-100">Status</label>
@@ -159,14 +159,14 @@
   <button
     [disabled]="submittingForm || resourceForm.invalid"
     type="submit"
-    class="btn-mb btn-lg float-right mt-3"
+    class="btn-mb btn-lg float-right mt-4 mb-32"
   >
     Save Entry
   </button>
 
   <a
     [routerLink]="['/reports']"
-    class="btn-mb buttonClass btn-lg btn-sec float-right mt-3 mr-3"
+    class="btn-mb buttonClass btn-lg btn-sec float-right mt-4 mr-3 mb-32"
   >
     CANCEL
   </a>

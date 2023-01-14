@@ -13,6 +13,10 @@ body {
   color: var(--base-text);
 }
 
+.logo {
+  height: 2rem;
+}
+
 h1,
 h2,
 h3,
@@ -34,6 +38,8 @@ h6,
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
+  align-items: center;
+  display: flex;
 
   &:hover {
     text-decoration: none;
@@ -171,7 +177,7 @@ h6,
 
 .tab-desc {
   display: block;
-  line-height: 16px;
+  line-height: 1rem;
   margin-top: 2px;
   color: var(--base-text);
 }
@@ -282,8 +288,51 @@ p.text-danger {
   white-space: nowrap;
 }
 
-@media (min-width: 1360px) {
-  .container {
-    max-width: 1320px;
+.container {
+  max-width: 1320px;
+  margin-bottom: 2rem;
+}
+
+.navbar {
+  padding: 10px 15px;
+}
+
+// @media (min-width: 1360px) {
+//   .container {
+//     max-width: 1320px;
+//   }
+// }
+
+@media (max-width: 640px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .report-entries {
+    gap: 2rem;
+  }
+
+  .table {
+    margin: 0;
+  }
+  .navbar-dark .navbar-toggler {
+    height: 3rem;
+  }
+
+  button,
+  input,
+  select,
+  .form-control,
+  .status-btn,
+  .btn-mb {
+    height: 4rem;
+  }
+
+  .input-container {
+    flex-direction: column;
+  }
+
+  .table-wrapper {
+    overflow: auto;
   }
 }

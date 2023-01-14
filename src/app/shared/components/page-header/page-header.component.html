@@ -1,12 +1,14 @@
-<div class="row mb-4 align-items-center">
-  <div class="col-md-9">
-    <h2 class="m-0">
-      {{ pageTitle }}
-    </h2>
-  </div>
-  <div *ngIf="showButton" class="col-md-3 text-right">
-    <a [routerLink]="buttonLink" class="btn" [ngClass]="buttonClass">
-      {{ buttonText }}
-    </a>
-  </div>
+<div class="inner-header">
+  <h2 class="m-0">
+    {{ pageTitle }}
+  </h2>
+
+  <a
+    *ngIf="buttonText"
+    [routerLink]="buttonLink"
+    class="btn"
+    [ngClass]="buttonClass"
+  >
+    {{ buttonText }}
+  </a>
 </div>

@@ -9,7 +9,7 @@
     <div class="card-header">Category information</div>
 
     <div class="card-body">
-      <div class="form-row">
+      <div class="form-row input-container">
         <div class="form-group col-md-4">
           <label for="name">Name</label>
           <input
@@ -44,13 +44,13 @@
   <button
     [disabled]="submittingForm || resourceForm.invalid"
     type="submit"
-    class="btn-mb btn-lg float-right mt-3"
+    class="btn-mb btn-lg float-right mt-4 mb-32"
   >
     Save Category
   </button>
   <a
     [routerLink]="['/reports']"
-    class="btn-mb buttonClass btn-lg btn-sec float-right mt-3 mr-3"
+    class="btn-mb buttonClass btn-lg btn-sec float-right mr-3 mt-4 mb-32"
   >
     CANCEL
   </a>

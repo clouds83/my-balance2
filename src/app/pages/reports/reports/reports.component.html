@@ -5,7 +5,7 @@
 <div class="d-flex justify-content-between mb-3">
   <div class="selector-container">
     <div class="selector-buttons">
-      <a class="prev-bt" (click)="prevMonth()" title="Previous month">
+      <button class="prev-bt" (click)="prevMonth()" title="Previous month">
         <svg width="10" height="16" viewBox="0 0 10 16">
           <path
             d="M-5951.442,15.442A1.893,1.893,0,0,1-5952,14.1a1.89,1.89,0,0,1,.559-1.346l4.75-4.749-4.75-4.75A1.891,1.891,0,0,1-5952,1.9a1.892,1.892,0,0,1,.557-1.347,1.909,1.909,0,0,1,2.695,0l6.094,6.095A1.9,1.9,0,0,1-5942.1,8a1.892,1.892,0,0,1-.559,1.347l-6.094,6.095a1.89,1.89,0,0,1-1.346.557A1.891,1.891,0,0,1-5951.442,15.442Zm.629-.629a1.013,1.013,0,0,0,1.436,0l6.1-6.1a1.006,1.006,0,0,0,.3-.717,1.012,1.012,0,0,1-.3.717l-6.1,6.1a1.013,1.013,0,0,1-1.436,0,1.012,1.012,0,0,1-.3-.718A1.012,1.012,0,0,0-5950.813,14.814Zm0-12.192L-5945.436,8l-5.377-5.379Z"
@@ -13,8 +13,8 @@
             fill="#abb9e0"
           />
         </svg>
-      </a>
-      <a class="next-bt" (click)="nextMonth()" title="Next month">
+      </button>
+      <button class="next-bt" (click)="nextMonth()" title="Next month">
         <svg width="10" height="16" viewBox="0 0 10 16">
           <path
             d="M-5951.442,15.442A1.893,1.893,0,0,1-5952,14.1a1.89,1.89,0,0,1,.559-1.346l4.75-4.749-4.75-4.75A1.891,1.891,0,0,1-5952,1.9a1.892,1.892,0,0,1,.557-1.347,1.909,1.909,0,0,1,2.695,0l6.094,6.095A1.9,1.9,0,0,1-5942.1,8a1.892,1.892,0,0,1-.559,1.347l-6.094,6.095a1.89,1.89,0,0,1-1.346.557A1.891,1.891,0,0,1-5951.442,15.442Zm.629-.629a1.013,1.013,0,0,0,1.436,0l6.1-6.1a1.006,1.006,0,0,0,.3-.717,1.012,1.012,0,0,1-.3.717l-6.1,6.1a1.013,1.013,0,0,1-1.436,0,1.012,1.012,0,0,1-.3-.718A1.012,1.012,0,0,0-5950.813,14.814Zm0-12.192L-5945.436,8l-5.377-5.379Z"
@@ -22,7 +22,7 @@
             fill="#abb9e0"
           />
         </svg>
-      </a>
+      </button>
     </div>
     <h2>{{ [currentMonth] | date : "MMMM" }} {{ currentYear }}</h2>
   </div>
@@ -116,7 +116,7 @@
   </div>
 </div>
 
-<div class="row mb-32" *ngIf="entries.length > 0">
+<div class="report-entries row mb-32" *ngIf="entries.length > 0">
   <div class="col-md-6">
     <h3 class="fs-20 mb-3">Income list</h3>
     <app-monthly-list [entries]="entries" entryT="revenue"></app-monthly-list>
