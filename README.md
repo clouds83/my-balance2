@@ -1,27 +1,16 @@
-# My Balance
+# My Balance - Finance control
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+__In progress but functional.__
 
-## Development server
+Hosted prototype: https://my-balance-clouds83.vercel.app/reports
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project was based in a course project that I took, but I modified the way the data is presented and the user interface.
 
-## Code scaffolding
+At the moment I'm using a fake back-end, with some dummy data just to help the development. But it is possible to create new entries and delete the dummy ones, what is reset after page refresh.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Built with:
+- Angular 15
+- Bootstrap CSS
+- PrimeNG UI components
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![home-desktop](https://user-images.githubusercontent.com/1158183/212573811-4dc8188b-9ebb-47b0-b31f-ae9a05f872de.png)
